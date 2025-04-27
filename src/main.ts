@@ -181,20 +181,16 @@ function processImage(img: HTMLImageElement, sliceWidth: number) {
 }
 
 function resetSlicePositions(slices: ImageSlice[]) {
-    const containerWidth = originalImage?.width || 0;
-    const sliceCount = slices.length;
-    const sliceWidth = containerWidth / sliceCount;
     let currentLeft = 0;
 
     slices.forEach((slice) => {
         if (slice?.element) {
-            slice.element.style.width = `${sliceWidth}px`;
             slice.element.style.left = `${currentLeft}px`;
             slice.element.style.bottom = '0px';
             slice.element.style.top = '';
             slice.element.style.transform = '';
 
-            currentLeft += sliceWidth;
+            currentLeft += slice.element.width;
         }
     });
 }
