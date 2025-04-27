@@ -1,0 +1,56 @@
+@import "tw-animate-css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: sans-serif;
+  padding: 20px;
+  @apply bg-black text-white;
+}
+
+h1 {
+  @apply text-3xl font-semibold text-center mb-6 text-white;
+}
+
+div {
+  margin-bottom: 15px;
+}
+
+label {
+  @apply mr-2 font-bold text-white;
+}
+
+input[type="file"],
+input[type="number"] {
+  @apply px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white;
+}
+
+button {
+  @apply px-4 py-2 font-semibold text-white bg-blue-500 rounded-md shadow-sm cursor-pointer mr-2 transition-colors duration-200 hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed;
+}
+
+#canvasContainer {
+  @apply bg-white dark:bg-gray-800 min-h-[100px] relative overflow-hidden;
+}
+
+#canvasContainer canvas {
+  display: block;
+  outline: 1px solid transparent; 
+  transition: left 0.3s ease-in-out, outline-color 0.1s linear;
+}
+
+.comparing {
+  outline-color: blue;
+  outline-width: 2px;
+}
+
+.swapping {
+  outline-color: red;
+  outline-width: 2px;
+}
+
+.no-transition {
+  transition: none !important;
+}

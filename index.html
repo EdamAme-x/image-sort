@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Sort Visualization</title>
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+    <h1>Image Sort Visualization</h1>
+    <div>
+        <label for="imageInput">画像を選択:</label>
+        <input type="file" id="imageInput" accept="image/*">
+    </div>
+    <div>
+        <label for="sliceWidth">スライス幅 (px):</label>
+        <input type="number" id="sliceWidth" value="5" min="1">
+    </div>
+    <div>
+        <label for="sortAlgorithm">ソートアルゴリズム:</label>
+        <select id="sortAlgorithm" class="px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+            <option value="bubbleSort">バブルソート</option>
+            <option value="quickSort">クイックソート</option>
+        </select>
+    </div>
+    <div>
+        <label for="sortSpeed">ソート速度 (ms/swap):</label>
+        <input type="number" id="sortSpeed" value="5" min="1" step="1">
+    </div>
+    <button id="processButton">処理開始</button>
+    <button id="sortButton" disabled>ソート開始</button>
+    <div id="canvasContainer" class="mt-5 border border-gray-500">
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
