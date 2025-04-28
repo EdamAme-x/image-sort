@@ -303,7 +303,9 @@ async function swapSlices(slices: ImageSlice[], i: number, j: number, speed: num
     await sleep(Math.max(0, speed - 150));
 
     el1.style.transform = '';
-    el2.classList.remove('swapping');
+    el2.style.transform = '';
+    el1.classList.remove('swapping');
+    el2.classList.remove('swapping');    
 }
 
 async function shuffleSlicesVisualization(slices: ImageSlice[], speed: number) {
